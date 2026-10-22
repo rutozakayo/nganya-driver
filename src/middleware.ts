@@ -13,7 +13,7 @@ export default auth((req) => {
     return NextResponse.next();
   }
 
-  if ((path === "/" || path.startsWith("/driver")) && !isLoggedIn) {
+  if (path.startsWith("/driver") && !isLoggedIn) {
     return NextResponse.redirect(new URL("/login", nextUrl));
   }
 
